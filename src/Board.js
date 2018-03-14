@@ -79,7 +79,18 @@
     //
     // test if a specific row on this board contains a conflict
     hasRowConflictAt: function(rowIndex) {
-      return false; // fixme
+      //find the row
+      //give for loop to check if the row[rowIndex]===row[i] --> false;
+      var bigRow = this.rows();
+      var smallRow= bigRow[rowIndex]
+      var result = smallRow.reduce(function(c,p){
+          return c + p;
+          }, 0);
+      if(result > 1){
+        return true;
+      } else {
+        return false;
+      }
     },
 
     // test if any rows on this board contain conflicts
